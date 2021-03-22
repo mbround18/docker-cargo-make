@@ -1,0 +1,9 @@
+version: "3"
+services:
+  cargo-make:
+    image: mbround18/cargo-make:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args: 
+        CARGO_MAKE_VERSION: "0.32.14"
