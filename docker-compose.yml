@@ -6,4 +6,4 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        CARGO_MAKE_VERSION: "0.32.17"
+        CARGO_MAKE_VERSION: "0.33.0"
