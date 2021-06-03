@@ -40,8 +40,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: mbround18/cargo-make:latest,${{ steps.meta.outputs.labels }}
+          tags:  mbround18/cargo-make:latest,${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             "GITHUB_SHA=${GITHUB_SHA}"
             "GITHUB_REF=${GITHUB_REF}"
