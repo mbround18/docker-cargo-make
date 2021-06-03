@@ -23,7 +23,6 @@ jobs:
 
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=sha
             type=raw,value=${{ github.event.inputs.make_version  }}
 
       - name: Set up Docker Buildx
@@ -42,7 +41,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          labels: mbround18/cargo-make:latest,${{ steps.meta.outputs.labels }}
           build-args: |
             "GITHUB_SHA=${GITHUB_SHA}"
             "GITHUB_REF=${GITHUB_REF}"
