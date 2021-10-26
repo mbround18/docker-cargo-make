@@ -12,7 +12,7 @@ RUN apk --update add openssl wget unzip \
     https://github.com/sagiegurari/cargo-make/releases/download/${CARGO_MAKE_VERSION}/${ARTIFACT_NAME}.zip \
     && unzip /tmp/cargo-make/cargo-make.zip -d /tmp/cargo-make/ \
     && cp /tmp/cargo-make/${ARTIFACT_NAME}/cargo-make /usr/local/bin \
-    && chmod +x /usr/local/bin/cargo-make
+    && chmod +x /usr/local/bin/cargo-make  
 
 
 
