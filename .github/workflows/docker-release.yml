@@ -1,4 +1,4 @@
-name: Docker Release - ${{ github.event.inputs.make_version }}
+name: Docker Release
 
 on:
   workflow_dispatch:
@@ -9,6 +9,7 @@ on:
 
 jobs:
   publish:
+    name: Publish (${{ github.event.inputs.make_version }})
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
