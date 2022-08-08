@@ -1,4 +1,4 @@
-name: Docker Release
+name: Docker Release - ${{ github.event.inputs.make_version }}
 
 on:
   workflow_dispatch:
