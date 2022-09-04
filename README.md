@@ -13,7 +13,7 @@ Any issues with this docker container should be logged here.
 ### Dockerfile
 
 ```Dockerfile
-FROM rust:1.56 as builder
+FROM rust:1.63 as builder
 WORKDIR /data/odin
 COPY . .
 COPY --from=cargo-make /usr/local/bin/cargo-make /usr/local/cargo/bin
