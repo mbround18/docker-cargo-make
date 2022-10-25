@@ -6,6 +6,8 @@ on:
       make_version:
         required: true
         description: Cargo Make version
+        
+run-name: Cargo Make Docker - Build ${{ inputs.make_version }}
 
 jobs:
   publish:
