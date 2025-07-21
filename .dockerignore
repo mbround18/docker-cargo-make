@@ -1,2 +1,7 @@
 .github/
 .idea/
+*.md
+*.py
+.venv
+uv.lock
+pyproject.toml

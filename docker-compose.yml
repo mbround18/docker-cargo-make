@@ -1,4 +1,3 @@
-version: "3"
 services:
   cargo-make:
     image: mbround18/cargo-make:latest
@@ -7,4 +6,3 @@ services:
       dockerfile: ./Dockerfile
       args:
         CARGO_MAKE_VERSION: "0.35.5"
-

@@ -1,0 +1,13 @@
+[project]
+name = "docker-cargo-make"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "docker>=7.1.0",
+    "invoke>=2.2.0",
+    "pygithub>=2.6.1",
+    "rich>=14.0.0",
+    "ruff>=0.12.4",
+]

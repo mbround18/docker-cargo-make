@@ -2,34 +2,20 @@ name: Docker Release
 
 on:
   workflow_dispatch:
-    inputs:
-      make_version:
-        required: true
-        description: Cargo Make version
-        
-run-name: Cargo Make Docker - Build ${{ inputs.make_version }}
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at midnight
+
+run-name: Cargo Make Docker - Sync Images
 
 jobs:
   publish:
     name: Publish (${{ github.event.inputs.make_version }})
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Docker meta
-        id: meta
-        uses: crazy-max/ghaction-docker-meta@v4
-        with:
-          # list of Docker images to use as base name for tags
-          images: |
-            mbround18/cargo-make
-
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=raw,value=${{ github.event.inputs.make_version  }}
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
 
       - name: Login to DockerHub
         uses: docker/login-action@v2
@@ -37,16 +23,11 @@ jobs:
           username: mbround18
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags:  mbround18/cargo-make:latest,${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            "GITHUB_SHA=${GITHUB_SHA}"
-            "GITHUB_REF=${GITHUB_REF}"
-            "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
-            "CARGO_MAKE_VERSION=${{ github.event.inputs.make_version  }}"
+      - name: Sync Images
+        run: |
+          uv run invoke sync
+        env:
+          CARGO_MAKE_VERSION: ${{ github.event.inputs.make_version }}
+          DOCKER_USERNAME: mbround18
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
