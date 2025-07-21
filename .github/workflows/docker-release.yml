@@ -8,8 +8,8 @@ on:
 run-name: Cargo Make Docker - Sync Images
 
 permissions:
-  contents: read   
-  packages: write 
+  contents: read
+  packages: write
 
 jobs:
   publish:

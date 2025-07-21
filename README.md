@@ -40,41 +40,6 @@ docker run --rm -v $(pwd):/workspace -w /workspace mbround18/cargo-make cargo ma
 docker run --rm -it -v $(pwd):/workspace -w /workspace mbround18/cargo-make sh
 ```
 
-## Development Tools
-
-This repository includes automation tools for maintaining zthe Docker images:
-
-### Available Commands
-
-| Command                      | Description                                                       |
-| ---------------------------- | ----------------------------------------------------------------- |
-| `inv diff`                   | Compare GitHub releases with Docker Hub tags                      |
-| `inv sync`                   | Build and push missing Docker images (up to 4 concurrent workers) |
-| `inv sync --replace VERSION` | Rebuild and push a specific version                               |
-| `inv sync --replace all`     | Rebuild and push all versions                                     |
-
-### Usage
-
-```bash
-# Show version differences between GitHub and Docker Hub
-inv diff
-
-# Sync missing versions to Docker Hub
-inv sync
-
-# Rebuild a specific version
-inv sync --replace 0.37.20
-
-# Rebuild all versions
-inv sync --replace all
-```
-
-### Requirements
-
-- Docker daemon running and configured
-- Docker Hub credentials configured for pushing
-- Internet connection for GitHub API and Docker Hub access
-
 ## Examples
 
 ### Basic Build Task
@@ -111,7 +76,9 @@ CMD ["myapp"]
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+Contributions are welcome! This repository includes automation tools for maintaining Docker images and syncing with cargo-make releases.
+
+For development setup, available commands, and contribution guidelines, please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 For issues related to cargo-make functionality, please report them to the [cargo-make repository](https://github.com/sagiegurari/cargo-make/issues).
 
