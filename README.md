@@ -2,7 +2,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mbround18/cargo-make)](https://hub.docker.com/r/mbround18/cargo-make)
 [![GitHub Release](https://img.shields.io/github/v/release/sagiegurari/cargo-make)](https://github.com/sagiegurari/cargo-make/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](LICENSE)
 
 A lightweight Docker image containing [cargo-make], a powerful build tool and task runner for Rust projects. This container provides an easy way to use cargo-make in CI/CD pipelines and development environments without local installation.
 
@@ -86,7 +86,7 @@ For issues specific to this Docker container, please use this repository's issue
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is released into the public domain under The Unlicense - see the [LICENSE](LICENSE) file for details.
 
 ## References
 
