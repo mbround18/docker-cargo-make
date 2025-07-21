@@ -78,7 +78,7 @@ CMD ["myapp"]
 
 Contributions are welcome! This repository includes automation tools for maintaining Docker images and syncing with cargo-make releases.
 
-For development setup, available commands, and contribution guidelines, please see [CONTRIBUTING.md](CONTRIBUTING.md).
+For development setup, available commands, and contribution guidelines, please see [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 
 For issues related to cargo-make functionality, please report them to the [cargo-make repository](https://github.com/sagiegurari/cargo-make/issues).
 
