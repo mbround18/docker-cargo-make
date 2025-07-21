@@ -73,7 +73,7 @@ Skipped versions will:
 
 ## Project Structure
 
-```
+```text
 docker-cargo-make/
 ├── tasks.py                 # Main invoke tasks (entry point)
 ├── utils/                   # Utility modules
