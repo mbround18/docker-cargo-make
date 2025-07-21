@@ -27,7 +27,4 @@ jobs:
         run: |
           uv run invoke sync
         env:
-          CARGO_MAKE_VERSION: ${{ github.event.inputs.make_version }}
-          DOCKER_USERNAME: mbround18
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
